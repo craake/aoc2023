@@ -1,12 +1,4 @@
-#![allow(dead_code, unused)]
-
-use std::{
-    collections::HashMap,
-    env::current_dir,
-    fs,
-    ops::{Deref, Not},
-    path,
-};
+use std::fs;
 
 pub fn run() {
     let input = fs::read_to_string("src/day1/input.txt")
@@ -91,7 +83,6 @@ fn calculate_part_2(input: &Vec<String>) -> u32 {
         .iter()
         .map(|line| {
             let mut r = enumerate_digits(&line.as_str());
-            let mut to_remove: Vec<usize> = vec![];
 
             enumerate_word_digits(line)
                 .iter()
